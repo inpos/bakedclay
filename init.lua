@@ -2,21 +2,21 @@
 -- Baked Clay by TenPlus1
 
 local clay = {
-	{"white", "White"},
-	{"grey", "Grey"},
-	{"black", "Black"},
-	{"red", "Red"},
-	{"yellow", "Yellow"},
-	{"green", "Green"},
-	{"cyan", "Cyan"},
-	{"blue", "Blue"},
-	{"magenta", "Magenta"},
-	{"orange", "Orange"},
-	{"violet", "Violet"},
-	{"brown", "Brown"},
-	{"pink", "Pink"},
-	{"dark_grey", "Dark Grey"},
-	{"dark_green", "Dark Green"},
+	{"white", "Белая"},
+	{"grey", "Серая"},
+	{"black", "Чёрная"},
+	{"red", "Красная"},
+	{"yellow", "Жёлтая"},
+	{"green", "Зелёная"},
+	{"cyan", "Голубая"},
+	{"blue", "Синяя"},
+	{"magenta", "Пурпурная"},
+	{"orange", "Оранжевая"},
+	{"violet", "Фиолетовая"},
+	{"brown", "Коричневая"},
+	{"pink", "Розовая"},
+	{"dark_grey", "Тёмно-серая"},
+	{"dark_green", "Тёмно-зелёная"},
 }
 
 for _, clay in pairs(clay) do
@@ -24,7 +24,7 @@ for _, clay in pairs(clay) do
 	-- node definition
 
 	minetest.register_node("bakedclay:" .. clay[1], {
-		description = clay[2] .. " Baked Clay",
+		description = clay[2] .. " обожжёная глина",
 		tiles = {"baked_clay_" .. clay[1] ..".png"},
 		groups = {cracky = 3, bakedclay = 1},
 		sounds = default.node_sound_stone_defaults(),
@@ -45,7 +45,7 @@ for _, clay in pairs(clay) do
 	if minetest.global_exists("stairsplus") then
 
 		stairsplus:register_all("bakedclay", "baked_clay_" .. clay[1], "bakedclay:" .. clay[1], {
-			description = clay[2] .. " Baked Clay",
+			description = clay[2] .. " обожжёная глина",
 			tiles = {"baked_clay_" .. clay[1] .. ".png"},
 			groups = {cracky = 3},
 			sounds = default.node_sound_stone_defaults(),
@@ -59,8 +59,8 @@ for _, clay in pairs(clay) do
 		stairs.register_stair_and_slab("bakedclay_".. clay[1], "bakedclay:".. clay[1],
 			{cracky = 3},
 			{"baked_clay_" .. clay[1] .. ".png"},
-			clay[2] .. " Baked Clay Stair",
-			clay[2] .. " Baked Clay Slab",
+			clay[2] .. " ступенька из обожжёной глины",
+			clay[2] .. " плита из обожжёной глины",
 			default.node_sound_stone_defaults())
 	end
 end
@@ -146,10 +146,10 @@ local function add_simple_flower(name, desc, box, f_groups)
 end
 
 local flowers = {
-	{"delphinium", "Blue Delphinium", {-0.15, -0.5, -0.15, 0.15, 0.3, 0.15}, {color_cyan = 1}},
-	{"thistle", "Thistle", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_magenta = 1}},
-	{"lazarus", "Lazarus Bell", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_pink = 1}},
-	{"mannagrass", "Reed Mannagrass", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_dark_green = 1}},
+	{"delphinium", "Синий дельфиниум", {-0.15, -0.5, -0.15, 0.15, 0.3, 0.15}, {color_cyan = 1}},
+	{"thistle", "Чертополох", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_magenta = 1}},
+	{"lazarus", "Рябчик шахматный", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_pink = 1}},
+	{"mannagrass", "Манник крупный", {-0.15, -0.5, -0.15, 0.15, 0.2, 0.15}, {color_dark_green = 1}},
 }
 
 for _,item in pairs(flowers) do
@@ -246,4 +246,4 @@ lucky_block:add_blocks({
 })
 end
 
-print ("[MOD] Baked Clay loaded")
+print ("[MOD] Baked Clay загружен")
